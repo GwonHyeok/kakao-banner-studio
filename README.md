@@ -22,9 +22,15 @@ Mac용 카카오톡 채팅 목록 하단에 원하는 배너를 표시하는 비
 | 운영체제 | macOS 27.2 (빌드 26B123) |
 | 카카오톡 | Mac용 26.9.0 (빌드 2006) |
 
-## 시작하기
+## Mac에서 바로 설치하기
 
-[GitHub Releases에서 DMG 다운로드](https://github.com/GwonHyeok/kakao-banner-studio/releases/latest) 후 앱을 **Applications**로 드래그하고 실행하세요.
+1. [GitHub Releases](https://github.com/GwonHyeok/kakao-banner-studio/releases/latest)의 **Assets**에서 `.dmg` 파일을 다운로드하고 엽니다.
+2. 아래 창에서 **카카오톡 배너 스튜디오**를 **Applications**로 드래그합니다.
+
+   ![DMG를 열면 카카오톡 배너 스튜디오와 Applications 바로가기가 표시됩니다](docs/screenshots/install-dmg.png)
+
+3. Finder의 **응용 프로그램**에서 **카카오톡 배너 스튜디오**를 엽니다.
+4. 첫 실행 안내에서 **확장 설정 시작**을 누르고, macOS가 요청하면 시스템 설정에서 네트워크 확장을 허용합니다. 스튜디오로 돌아와 **인증서 설정**을 누르고 macOS 확인을 완료합니다.
 
 - [Mac에서 직접 실행하는 방법](docs/getting-started.md)에서 소스 빌드, 개발용 서명, 첫 실행 권한 설정을 확인할 수 있습니다.
 - [커뮤니티에 배너 공유하는 방법](community/README.md)에서 이미지 등록과 PR 제출 순서를 확인할 수 있습니다.
