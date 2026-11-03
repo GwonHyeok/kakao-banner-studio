@@ -26,7 +26,7 @@ Mac용 카카오톡 채팅 목록 하단에 원하는 배너를 표시하는 비
 
 [GitHub Releases에서 DMG 다운로드](https://github.com/GwonHyeok/kakao-banner-studio/releases/latest) 후 앱을 **Applications**로 드래그하고 실행하세요.
 
-- [Mac에서 실행하는 방법](docs/getting-started.md)에서 Xcode 빌드와 첫 권한 설정을 따라 할 수 있습니다.
+- [Mac에서 직접 실행하는 방법](docs/getting-started.md)에서 소스 빌드, 개발용 서명, 첫 실행 권한 설정을 확인할 수 있습니다.
 - [커뮤니티에 배너 공유하는 방법](community/README.md)에서 이미지 등록과 PR 제출 순서를 확인할 수 있습니다.
 
 ## 배너 바꾸기
