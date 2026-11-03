@@ -10,5 +10,54 @@
     "title": "빙글빙글 고양이",
     "author": "DevinToaster",
     "image": "images/cat-cube.gif"
+  },
+  {
+    "id": "cat-click",
+    "title": "일하는 고양이",
+    "author": "Abitan",
+    "image": "images/cat-click.gif",
+    "source": "https://giphy.com/gifs/qQRfz2VfUbDeebczif"
+  },
+  {
+    "id": "coffee-cat",
+    "title": "쏙 나타난 고양이",
+    "author": "Thank You Coffee",
+    "image": "images/coffee-cat.gif",
+    "source": "https://giphy.com/gifs/VHtuGwzaT0p9uc1Fyi"
+  },
+  {
+    "id": "cats-typing",
+    "title": "타자 치는 고양이들",
+    "author": "cupofmotion",
+    "image": "images/cats-typing.gif",
+    "source": "https://giphy.com/gifs/SLzgaW0dW1qYjei58x"
+  },
+  {
+    "id": "cat-loafing",
+    "title": "식빵 굽는 고양이",
+    "author": "Mikeymikeymotocykey",
+    "image": "images/cat-loafing.gif",
+    "source": "https://giphy.com/gifs/18PEdVlvikv11QBZ7g"
+  },
+  {
+    "id": "cats-monday",
+    "title": "월요일의 고양이",
+    "author": "Parker Jackson",
+    "image": "images/cats-monday.gif",
+    "source": "https://giphy.com/gifs/8rChMqEHL0lbgKNn0W"
+  },
+  {
+    "id": "hamsters-eating",
+    "title": "먹방 햄스터",
+    "author": "The Dodo",
+    "image": "images/hamsters-eating.gif",
+    "source": "https://giphy.com/gifs/Lp4bNv04IhQceCuUGD"
+  },
+  {
+    "id": "bath-capybara",
+    "title": "목욕하는 카피바라",
+    "author": "sansanplanet",
+    "image": "images/bath-capybara.gif",
+    "source": "https://giphy.com/gifs/LM1BmzqwTMNyq468hv"
   }
 ]
