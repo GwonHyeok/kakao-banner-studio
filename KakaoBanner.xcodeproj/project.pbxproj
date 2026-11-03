@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C12988A17FD64B36A8299003 /* BannerPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12988A17FD64B36A8299004 /* BannerPayload.swift */; };
+		C12988A17FD64B36A8299001 /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12988A17FD64B36A8299002 /* BannerResponse.swift */; };
+		11BCDF38CBB6513BA434D8D8 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5B97729FA731BD6374515 /* BannerView.swift */; };
+		1D5C194D9D3E45223379C582 /* ProxyAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE540477E1D717EC2871E55C /* ProxyAccess.swift */; };
+		2201449E6180299B30B3A482 /* GeneratedBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFD7AF91C6F149B46D8CE1 /* GeneratedBanner.swift */; };
+		322F6912C127A41B2583FA39 /* BannerLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A4B0BC18354C0634BC003 /* BannerLibrary.swift */; };
+		47595F120D84E615F38CC7D3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B43A2AF7248FEBC6D3D4B /* main.swift */; };
+		58CE574DF001DECBD6632555 /* BannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA724E33E3C2BC56F3880E /* BannerApp.swift */; };
+		5FC8EEBE2B5C761B137260CB /* KakaoTalkLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85146DF933103448D20994 /* KakaoTalkLauncher.swift */; };
+		7EBBA8CA8B2839A825040E31 /* BannerCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA2ADB9CCA5F832249CC1A /* BannerCropView.swift */; };
+		8A4926B14AF9A7CBBA61F8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1AB9C2F5A3D4799964897A1 /* Assets.xcassets */; };
+		90C0F61BA9333D067884ADAE /* LocalCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3A6FD63292DE76F09E9BF /* LocalCA.swift */; };
+		AA7ACA08E973A9A265D685F1 /* KakaoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1912027A248775021C325EA /* KakaoPreview.swift */; };
+		BC4597DC31AA06B2B0E09CED /* BannerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1279502181B5086EDE870A45 /* BannerPreset.swift */; };
+		C37248BD1A829DC72F71146C /* LocalBannerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF52C4C5295ED38A5607B483 /* LocalBannerStorage.swift */; };
+		E4D109EDAC36CE0E2A931CC0 /* local.kakaobanner.native.proxy.systemextension in Embed Dependencies */ = {isa = PBXBuildFile; fileRef = 94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		048831BF8D4E054A67A52DE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BE283B53FA1F66FAB2D0BE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5276A590096C83D92A5756C;
+			remoteInfo = BannerProxy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55E8DA12D4D4B51E0B878335 /* Embed Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/SystemExtensions;
+			dstSubfolderSpec = 1;
+			files = (
+				E4D109EDAC36CE0E2A931CC0 /* local.kakaobanner.native.proxy.systemextension in Embed Dependencies */,
+			);
+			name = "Embed Dependencies";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C12988A17FD64B36A8299004 /* BannerPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPayload.swift; sourceTree = "<group>"; };
+		C12988A17FD64B36A8299002 /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
+		1279502181B5086EDE870A45 /* BannerPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPreset.swift; sourceTree = "<group>"; };
+		4BBA2ADB9CCA5F832249CC1A /* BannerCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCropView.swift; sourceTree = "<group>"; };
+		5CB3A6FD63292DE76F09E9BF /* LocalCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCA.swift; sourceTree = "<group>"; };
+		665A4B0BC18354C0634BC003 /* BannerLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerLibrary.swift; sourceTree = "<group>"; };
+		6E5CD12EBA92F40A0ADE9387 /* Proxy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Proxy.entitlements; sourceTree = "<group>"; };
+		7A85146DF933103448D20994 /* KakaoTalkLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTalkLauncher.swift; sourceTree = "<group>"; };
+		9445FFFDE951CF002FEE63C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = local.kakaobanner.native.proxy.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DA724E33E3C2BC56F3880E /* BannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerApp.swift; sourceTree = "<group>"; };
+		BBBFD7AF91C6F149B46D8CE1 /* GeneratedBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedBanner.swift; sourceTree = "<group>"; };
+		CF39BC410D9A6DA4F0BC0974 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
+		D1912027A248775021C325EA /* KakaoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoPreview.swift; sourceTree = "<group>"; };
+		DE7DD446FFA5A5754B14F037 /* KakaoBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8B43A2AF7248FEBC6D3D4B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DF52C4C5295ED38A5607B483 /* LocalBannerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBannerStorage.swift; sourceTree = "<group>"; };
+		E1AB9C2F5A3D4799964897A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE540477E1D717EC2871E55C /* ProxyAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyAccess.swift; sourceTree = "<group>"; };
+		F0B5B97729FA731BD6374515 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0F04B9BA860D84995915CA4C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				7A85146DF933103448D20994 /* KakaoTalkLauncher.swift */,
+				DF52C4C5295ED38A5607B483 /* LocalBannerStorage.swift */,
+				5CB3A6FD63292DE76F09E9BF /* LocalCA.swift */,
+				C12988A17FD64B36A8299004 /* BannerPayload.swift */,
+				EE540477E1D717EC2871E55C /* ProxyAccess.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		32FD11CE89E6DF373C91852B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CF39BC410D9A6DA4F0BC0974 /* App.entitlements */,
+				E1AB9C2F5A3D4799964897A1 /* Assets.xcassets */,
+				A1DA724E33E3C2BC56F3880E /* BannerApp.swift */,
+				B14F203ABBCD12BE2917F11E /* Application */,
+				E9753352E9A452F2F92B5C00 /* Domain */,
+				0F04B9BA860D84995915CA4C /* Infrastructure */,
+				8D7F5C41FECFBCE807801664 /* Presentation */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6FE8F369725E9D579C581192 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				9445FFFDE951CF002FEE63C8 /* Info.plist */,
+				C12988A17FD64B36A8299002 /* BannerResponse.swift */,
+				DE8B43A2AF7248FEBC6D3D4B /* main.swift */,
+				6E5CD12EBA92F40A0ADE9387 /* Proxy.entitlements */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		7D7732E0842CDD18AC103FC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */,
+				DE7DD446FFA5A5754B14F037 /* KakaoBanner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D7F5C41FECFBCE807801664 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4BBA2ADB9CCA5F832249CC1A /* BannerCropView.swift */,
+				F0B5B97729FA731BD6374515 /* BannerView.swift */,
+				D1912027A248775021C325EA /* KakaoPreview.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		AE3F64FBBF20AA1ADA0A812C = {
+			isa = PBXGroup;
+			children = (
+				32FD11CE89E6DF373C91852B /* App */,
+				6FE8F369725E9D579C581192 /* Proxy */,
+				7D7732E0842CDD18AC103FC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B14F203ABBCD12BE2917F11E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				665A4B0BC18354C0634BC003 /* BannerLibrary.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E9753352E9A452F2F92B5C00 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1279502181B5086EDE870A45 /* BannerPreset.swift */,
+				BBBFD7AF91C6F149B46D8CE1 /* GeneratedBanner.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		114C10AEAAAAACD45850DADE /* KakaoBanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAD5FE0E804E6224F4FDBDC9 /* Build configuration list for PBXNativeTarget "KakaoBanner" */;
+			buildPhases = (
+				6E1BF92F1DF5D6A665A72D6E /* Sources */,
+				DD36FA14CBA1A73A8A13748F /* Resources */,
+				55E8DA12D4D4B51E0B878335 /* Embed Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A35D64711A7F3EE30A519162 /* PBXTargetDependency */,
+			);
+			name = KakaoBanner;
+			packageProductDependencies = (
+			);
+			productName = KakaoBanner;
+			productReference = DE7DD446FFA5A5754B14F037 /* KakaoBanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5276A590096C83D92A5756C /* BannerProxy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F283F5E72F0C27080516740 /* Build configuration list for PBXNativeTarget "BannerProxy" */;
+			buildPhases = (
+				7F7B10A4090C4F2D59A1DC00 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BannerProxy;
+			packageProductDependencies = (
+			);
+			productName = local.kakaobanner.native.proxy;
+			productReference = 94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */;
+			productType = "com.apple.product-type.system-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BE283B53FA1F66FAB2D0BE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = B64574BCBE32AA5388B40818 /* Build configuration list for PBXProject "KakaoBanner" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AE3F64FBBF20AA1ADA0A812C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7D7732E0842CDD18AC103FC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				114C10AEAAAAACD45850DADE /* KakaoBanner */,
+				B5276A590096C83D92A5756C /* BannerProxy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD36FA14CBA1A73A8A13748F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A4926B14AF9A7CBBA61F8F3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E1BF92F1DF5D6A665A72D6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58CE574DF001DECBD6632555 /* BannerApp.swift in Sources */,
+				7EBBA8CA8B2839A825040E31 /* BannerCropView.swift in Sources */,
+				322F6912C127A41B2583FA39 /* BannerLibrary.swift in Sources */,
+				BC4597DC31AA06B2B0E09CED /* BannerPreset.swift in Sources */,
+				11BCDF38CBB6513BA434D8D8 /* BannerView.swift in Sources */,
+				2201449E6180299B30B3A482 /* GeneratedBanner.swift in Sources */,
+				AA7ACA08E973A9A265D685F1 /* KakaoPreview.swift in Sources */,
+				5FC8EEBE2B5C761B137260CB /* KakaoTalkLauncher.swift in Sources */,
+				C37248BD1A829DC72F71146C /* LocalBannerStorage.swift in Sources */,
+				90C0F61BA9333D067884ADAE /* LocalCA.swift in Sources */,
+				C12988A17FD64B36A8299003 /* BannerPayload.swift in Sources */,
+				1D5C194D9D3E45223379C582 /* ProxyAccess.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F7B10A4090C4F2D59A1DC00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C12988A17FD64B36A8299001 /* BannerResponse.swift in Sources */,
+				47595F120D84E615F38CC7D3 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A35D64711A7F3EE30A519162 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5276A590096C83D92A5756C /* BannerProxy */;
+			targetProxy = 048831BF8D4E054A67A52DE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02EC076525894E54C9655431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		09FFE8D7C00815325B522F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "카카오톡 배너 스튜디오";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4802A9E55C920CB719C43528 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 27.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5F47F37750C16A1FA5EBA340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Proxy/Proxy.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Proxy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native.proxy;
+				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9BE3E073083D5710BA6223ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "카카오톡 배너 스튜디오";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FFA9BAD7B773E2DA8FE45336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Proxy/Proxy.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Proxy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native.proxy;
+				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F283F5E72F0C27080516740 /* Build configuration list for PBXNativeTarget "BannerProxy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA9BAD7B773E2DA8FE45336 /* Debug */,
+				5F47F37750C16A1FA5EBA340 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B64574BCBE32AA5388B40818 /* Build configuration list for PBXProject "KakaoBanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4802A9E55C920CB719C43528 /* Debug */,
+				02EC076525894E54C9655431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BAD5FE0E804E6224F4FDBDC9 /* Build configuration list for PBXNativeTarget "KakaoBanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09FFE8D7C00815325B522F75 /* Debug */,
+				9BE3E073083D5710BA6223ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BE283B53FA1F66FAB2D0BE8 /* Project object */;
+}
