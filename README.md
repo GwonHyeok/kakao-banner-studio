@@ -10,7 +10,9 @@ Mac용 카카오톡 채팅 목록 하단에 원하는 배너를 표시하는 비
 
 실제 카카오톡 창 전체에 배너가 적용된 모습입니다. 프로필 사진과 이름은 가렸습니다.
 
-<img src="docs/screenshots/kakaotalk-banner.png" alt="실제 카카오톡 하단에 적용된 배너" width="400">
+<img src="docs/screenshots/kakaotalk-demo.gif" alt="실제 카카오톡에서 움직이는 배너" width="400">
+
+[카카오톡 적용 영상 (MOV)](docs/screenshots/kakaotalk-demo.mov)
 
 ## Requirements
 
