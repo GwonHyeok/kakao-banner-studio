@@ -2,6 +2,16 @@
 
 Mac용 카카오톡 채팅 목록 하단에 원하는 배너를 표시하는 비공식 앱입니다. 광고를 비우거나, 카카오톡 배경에 맞추거나, 내 이미지나 커뮤니티 배너로 바꿀 수 있습니다.
 
+## 화면 미리보기
+
+스튜디오에서 배너를 고르면 오른쪽에 카카오톡 미리보기가 표시됩니다.
+
+![카카오톡 배너 스튜디오의 갤러리와 배너 미리보기](docs/screenshots/studio.png)
+
+실제 카카오톡에 적용된 하단 배너입니다. 개인정보 보호를 위해 창의 하단만 담았습니다.
+
+<img src="docs/screenshots/kakaotalk-banner.png" alt="실제 카카오톡 하단에 적용된 배너" width="400">
+
 ## Requirements
 
 아래 환경에서 배너 적용을 테스트했습니다. 다른 환경은 호환 여부를 확인하지 않았습니다.
@@ -14,7 +24,7 @@ Mac용 카카오톡 채팅 목록 하단에 원하는 배너를 표시하는 비
 
 ## 시작하기
 
-현재 GitHub에는 소스 코드가 공개되어 있으며 설치 파일은 준비 중입니다.
+[GitHub Releases에서 DMG 다운로드](https://github.com/GwonHyeok/kakao-banner-studio/releases/latest) 후 앱을 **Applications**로 드래그하고 실행하세요.
 
 - [Mac에서 실행하는 방법](docs/getting-started.md)에서 Xcode 빌드와 첫 권한 설정을 따라 할 수 있습니다.
 - [커뮤니티에 배너 공유하는 방법](community/README.md)에서 이미지 등록과 PR 제출 순서를 확인할 수 있습니다.
