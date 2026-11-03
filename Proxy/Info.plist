@@ -11,9 +11,9 @@
 	<key>CFBundlePackageType</key>
 	<string>SYSX</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.2</string>
+	<string>0.0.3</string>
 	<key>CFBundleVersion</key>
-	<string>12</string>
+	<string>13</string>
 	<key>NSSystemExtensionUsageDescription</key>
 	<string>카카오톡 배너의 네트워크 연결을 처리합니다.</string>
 	<key>NetworkExtension</key>

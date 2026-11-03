@@ -75,7 +75,7 @@ NOTARY_PROFILE=키체인-프로필-이름 \
 공증과 티켓 검증을 통과한 DMG는 GitHub Releases에 첨부합니다. 태그는 배포할 소스 커밋에 맞춥니다.
 
 ```sh
-gh release create v0.0.2 /tmp/KakaoBannerStudio.dmg \
+gh release create v0.0.3 /tmp/KakaoBannerStudio.dmg \
   --repo GwonHyeok/kakao-banner-studio --draft --generate-notes
 ```
 

@@ -277,7 +277,7 @@ final class BannerProxyProvider: NETransparentProxyProvider {
                     guard !["host", "connection", "accept-encoding", "content-length"].contains(name.lowercased()) else { continue }
                     request.addValue(line[line.index(after: colon)...].trimmingCharacters(in: .whitespaces), forHTTPHeaderField: name)
                 }
-                self.forwardBannerDocument(request, to: connection, blank: banner == nil, seamless: seamless, close: close)
+                self.forwardBannerDocument(request, to: connection, banner: banner, seamless: seamless, close: close)
                 return
             }
             var headers = lines.filter { !$0.lowercased().hasPrefix("connection:") }
@@ -287,7 +287,7 @@ final class BannerProxyProvider: NETransparentProxyProvider {
         }
     }
 
-    private func forwardBannerDocument(_ request: URLRequest, to client: NWConnection, blank: Bool, seamless: Bool, close: @escaping () -> Void) {
+    private func forwardBannerDocument(_ request: URLRequest, to client: NWConnection, banner: BannerResponse?, seamless: Bool, close: @escaping () -> Void) {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.timeoutIntervalForRequest = 10
         let session = URLSession(configuration: configuration)
@@ -295,53 +295,16 @@ final class BannerProxyProvider: NETransparentProxyProvider {
             self.queue.async {
                 defer { session.finishTasksAndInvalidate() }
                 guard let data, let response = response as? HTTPURLResponse else { close(); return }
-                let body = response.statusCode == 200 ? self.rewriteBannerDocument(data, blank: blank, seamless: seamless) : data
+                let rewritten = response.statusCode == 200
+                    ? BannerResponse.rewriteDocument(data, banner: banner, seamless: seamless)
+                    : nil
+                self.logger.notice("Ad API document banner HTML matched=\(rewritten != nil) blank=\(banner == nil)")
+                let body = rewritten ?? data
                 let mime = response.mimeType ?? "application/octet-stream"
                 let head = "HTTP/1.1 \(response.statusCode) Response\r\nContent-Type: \(mime)\r\nContent-Length: \(body.count)\r\nCache-Control: no-store\r\nConnection: close\r\n\r\n"
                 client.send(content: Data(head.utf8) + body, isComplete: true, completion: .contentProcessed { _ in close() })
             }
         }.resume()
-    }
-
-    private func rewriteBannerDocument(_ body: Data, blank: Bool, seamless: Bool) -> Data {
-        guard body.count <= 2 * 1024 * 1024,
-              let root = try? JSONSerialization.jsonObject(with: body) else { return body }
-        let background = seamless
-            ? "linear-gradient(to right, #f2f2f2 0 19.25%, #e8e8e8 19.25% 19.5%, #fff 19.5% 100%)"
-            : "transparent"
-        var changed = false
-        func visit(_ node: Any) -> Any {
-            if let array = node as? [Any] { return array.map(visit) }
-            guard var fields = node as? [String: Any] else { return node }
-            if let html = fields["content"] as? String,
-               let creative = html.range(of: #"https://t1\.kakaocdn\.net/b2/creative/[0-9]+/[a-fA-F0-9]{32}\.png"#, options: .regularExpression) {
-                fields["content"] = blank ? """
-                <!doctype html><html lang="ko"><meta charset="utf-8">
-                <style>
-                html, body { margin: 0; height: 100%; background: \(background); }
-                a { display: block; width: 100%; height: 100%; }
-                </style>
-                <body><a href="kakaobanner://gallery" target="_blank" aria-label="카카오톡 배너 스튜디오 갤러리"></a></body></html>
-                """ : """
-                <!doctype html><html lang="ko"><meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <style>
-                html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
-                a, img { display: block; width: 100%; height: 100%; }
-                img { object-fit: contain; }
-                </style>
-                <a href="kakaobanner://gallery" target="_blank"><img src="\(html[creative])" alt="카카오톡 배너 스튜디오 갤러리"></a>
-                </html>
-                """
-                changed = true
-                return fields
-            }
-            return fields.mapValues(visit)
-        }
-        let rewritten = visit(root)
-        logger.notice("Ad API document banner HTML matched=\(changed) blank=\(blank)")
-        guard changed, let encoded = try? JSONSerialization.data(withJSONObject: rewritten) else { return body }
-        return encoded
     }
 
     private func forward(_ client: NWConnection, host: String, initial: Data, close: @escaping () -> Void) {

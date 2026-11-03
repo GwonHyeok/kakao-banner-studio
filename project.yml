@@ -16,7 +16,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.koreaaitel.kakaobannerstudio
-        MARKETING_VERSION: "0.0.2"
+        MARKETING_VERSION: "0.0.3"
         PRODUCT_NAME: "카카오톡 배너 스튜디오"
         EXECUTABLE_NAME: KakaoBanner
         INFOPLIST_FILE: App/Info.plist
