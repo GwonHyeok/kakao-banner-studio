@@ -1,36 +1,17 @@
 [
   {
-    "id": "waddling-duck",
-    "title": "뒤뚱뒤뚱 오리",
-    "author": "Drummyfish",
-    "image": "images/waddling-duck.gif"
+    "id": "sandwich-cat",
+    "title": "샌드위치 고양이",
+    "author": "ringodanyan",
+    "image": "images/sandwich-cat.gif",
+    "source": "https://giphy.com/gifs/z8lO8vYWxfH0ffp3NT"
   },
   {
-    "id": "cat-cube",
-    "title": "빙글빙글 고양이",
-    "author": "DevinToaster",
-    "image": "images/cat-cube.gif"
-  },
-  {
-    "id": "cat-click",
-    "title": "일하는 고양이",
-    "author": "Abitan",
-    "image": "images/cat-click.gif",
-    "source": "https://giphy.com/gifs/qQRfz2VfUbDeebczif"
-  },
-  {
-    "id": "coffee-cat",
-    "title": "쏙 나타난 고양이",
-    "author": "Thank You Coffee",
-    "image": "images/coffee-cat.gif",
-    "source": "https://giphy.com/gifs/VHtuGwzaT0p9uc1Fyi"
-  },
-  {
-    "id": "cats-typing",
-    "title": "타자 치는 고양이들",
-    "author": "cupofmotion",
-    "image": "images/cats-typing.gif",
-    "source": "https://giphy.com/gifs/SLzgaW0dW1qYjei58x"
+    "id": "hotdog-cat",
+    "title": "핫도그 고양이",
+    "author": "TheOrbitPaws",
+    "image": "images/hotdog-cat.gif",
+    "source": "https://giphy.com/gifs/VzBuiFbBN61Mxktt5P"
   },
   {
     "id": "cat-loafing",
@@ -40,11 +21,30 @@
     "source": "https://giphy.com/gifs/18PEdVlvikv11QBZ7g"
   },
   {
-    "id": "cats-monday",
-    "title": "월요일의 고양이",
-    "author": "Parker Jackson",
-    "image": "images/cats-monday.gif",
-    "source": "https://giphy.com/gifs/8rChMqEHL0lbgKNn0W"
+    "id": "bread-sprint",
+    "title": "빵 들고 전력질주",
+    "author": "Gunmaunofficial",
+    "image": "images/bread-sprint.gif",
+    "source": "https://giphy.com/gifs/eCF0mkyxRlDqncRQcO"
+  },
+  {
+    "id": "cat-cube",
+    "title": "빙글빙글 고양이",
+    "author": "DevinToaster",
+    "image": "images/cat-cube.gif"
+  },
+  {
+    "id": "waddling-duck",
+    "title": "뒤뚱뒤뚱 오리",
+    "author": "Drummyfish",
+    "image": "images/waddling-duck.gif"
+  },
+  {
+    "id": "bath-capybara",
+    "title": "목욕하는 카피바라",
+    "author": "sansanplanet",
+    "image": "images/bath-capybara.gif",
+    "source": "https://giphy.com/gifs/LM1BmzqwTMNyq468hv"
   },
   {
     "id": "hamsters-eating",
@@ -54,10 +54,157 @@
     "source": "https://giphy.com/gifs/Lp4bNv04IhQceCuUGD"
   },
   {
-    "id": "bath-capybara",
-    "title": "목욕하는 카피바라",
-    "author": "sansanplanet",
-    "image": "images/bath-capybara.gif",
-    "source": "https://giphy.com/gifs/LM1BmzqwTMNyq468hv"
+    "id": "coffee-cat",
+    "title": "쏙 나타난 고양이",
+    "author": "Thank You Coffee",
+    "image": "images/coffee-cat.gif",
+    "source": "https://giphy.com/gifs/VHtuGwzaT0p9uc1Fyi"
+  },
+  {
+    "id": "cat-click",
+    "title": "일하는 고양이",
+    "author": "Abitan",
+    "image": "images/cat-click.gif",
+    "source": "https://giphy.com/gifs/qQRfz2VfUbDeebczif"
+  },
+  {
+    "id": "cats-typing",
+    "title": "타자 치는 고양이들",
+    "author": "cupofmotion",
+    "image": "images/cats-typing.gif",
+    "source": "https://giphy.com/gifs/SLzgaW0dW1qYjei58x"
+  },
+  {
+    "id": "keyboard-cat",
+    "title": "키보드 치는 고양이",
+    "author": "Keyboard Cat",
+    "image": "images/keyboard-cat.gif",
+    "source": "https://giphy.com/gifs/ule4vhcY1xEKQ"
+  },
+  {
+    "id": "dog-computer",
+    "title": "일하는 강아지",
+    "author": "GIPHY",
+    "image": "images/dog-computer.gif",
+    "source": "https://giphy.com/gifs/L1R1tvI9svkIWwpVYr"
+  },
+  {
+    "id": "nyan-cat",
+    "title": "무지개 냥캣",
+    "author": "Nyan Cat",
+    "image": "images/nyan-cat.gif",
+    "source": "https://giphy.com/gifs/sIIhZliB2McAo"
+  },
+  {
+    "id": "talking-cat",
+    "title": "뭐라고요 고양이",
+    "author": "RiffTrax",
+    "image": "images/talking-cat.gif",
+    "source": "https://giphy.com/gifs/2wgZ7QHPLyy7q4JzHP"
+  },
+  {
+    "id": "garfield-shock",
+    "title": "깜짝 놀란 가필드",
+    "author": "Garfield",
+    "image": "images/garfield-shock.gif",
+    "source": "https://giphy.com/gifs/ywkkDneb1S5ndCjO3M"
+  },
+  {
+    "id": "cats-monday",
+    "title": "월요일의 고양이",
+    "author": "Parker Jackson",
+    "image": "images/cats-monday.gif",
+    "source": "https://giphy.com/gifs/8rChMqEHL0lbgKNn0W"
+  },
+  {
+    "id": "blink",
+    "title": "두 눈을 의심",
+    "author": "Drew Scanlon",
+    "image": "images/blink.gif",
+    "source": "https://giphy.com/gifs/3ELtfmA4Apkju"
+  },
+  {
+    "id": "math",
+    "title": "머릿속 계산 중",
+    "author": "Senhora do Destino",
+    "image": "images/math.gif",
+    "source": "https://giphy.com/gifs/WRQBXSCnEFJIuxktnw"
+  },
+  {
+    "id": "rock-eyebrow",
+    "title": "의심의 눈썹",
+    "author": "Dwayne Johnson",
+    "image": "images/rock-eyebrow.gif",
+    "source": "https://giphy.com/gifs/26ghbWoXv3G6ypo8o"
+  },
+  {
+    "id": "travolta",
+    "title": "다들 어디 갔지",
+    "author": "Pulp Fiction",
+    "image": "images/travolta.gif",
+    "source": "https://giphy.com/gifs/6uGhT1O4sxpi8"
+  },
+  {
+    "id": "homer",
+    "title": "조용히 퇴장",
+    "author": "The Simpsons",
+    "image": "images/homer.gif",
+    "source": "https://giphy.com/gifs/a93jwI0wkWTQs"
+  },
+  {
+    "id": "fine",
+    "title": "괜찮아요 아마도",
+    "author": "KC Green",
+    "image": "images/fine.gif",
+    "source": "https://giphy.com/gifs/QMHoU66sBXqqLqYvGO"
+  },
+  {
+    "id": "office-no",
+    "title": "안 돼요",
+    "author": "The Office",
+    "image": "images/office-no.gif",
+    "source": "https://giphy.com/gifs/hyyV7pnbE0FqLNBAzs"
+  },
+  {
+    "id": "office-thanks",
+    "title": "감사합니다",
+    "author": "The Office",
+    "image": "images/office-thanks.gif",
+    "source": "https://giphy.com/gifs/1Z02vuppxP1Pa"
+  },
+  {
+    "id": "slow-clap",
+    "title": "느린 박수",
+    "author": "Citizen Kane",
+    "image": "images/slow-clap.gif",
+    "source": "https://giphy.com/gifs/srg19CG0cKMuI"
+  },
+  {
+    "id": "mind-blown",
+    "title": "상상도 못한 결과",
+    "author": "Tim and Eric",
+    "image": "images/mind-blown.gif",
+    "source": "https://giphy.com/gifs/26ufdipQqU2lhNA4g"
+  },
+  {
+    "id": "kermit-tea",
+    "title": "그저 차 한잔",
+    "author": "The Muppets",
+    "image": "images/kermit-tea.gif",
+    "source": "https://giphy.com/gifs/3o85xGocUH8RYoDKKs"
+  },
+  {
+    "id": "popcorn-mj",
+    "title": "팝콘 각",
+    "author": "Michael Jackson",
+    "image": "images/popcorn-mj.gif",
+    "source": "https://giphy.com/gifs/pUeXcg80cO8I8"
+  },
+  {
+    "id": "popcorn-bb",
+    "title": "팝콘 먹다 깜짝",
+    "author": "Pop TV",
+    "image": "images/popcorn-bb.gif",
+    "source": "https://giphy.com/gifs/l0HlPystfePnAI3G8"
   }
 ]
