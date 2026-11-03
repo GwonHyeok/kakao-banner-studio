@@ -26,3 +26,7 @@
 ## 3. PR 보내기
 
 [PR 비교 화면](https://github.com/GwonHyeok/kakao-banner-studio/compare)에서 **compare across forks**를 선택합니다. 대상은 `GwonHyeok/kakao-banner-studio`의 `main`, 비교 대상은 본인의 포크와 작업 브랜치로 지정합니다. **Create pull request**를 누른 뒤 자동으로 채워지는 양식에 배너 이름과 이미지 경로를 적고 체크리스트를 확인해 제출합니다.
+
+## 배너 출처
+
+- 뒤뚱뒤뚱 오리. Drummyfish의 [오리 걷기 GIF](https://commons.wikimedia.org/wiki/File:Cartoon_steamer_duck_walking_animation.gif)를 4:1 배너에 맞게 배치했습니다. 원본은 CC0 1.0입니다.
