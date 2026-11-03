@@ -30,3 +30,4 @@
 ## 배너 출처
 
 - 뒤뚱뒤뚱 오리. Drummyfish의 [오리 걷기 GIF](https://commons.wikimedia.org/wiki/File:Cartoon_steamer_duck_walking_animation.gif)를 4:1 배너에 맞게 배치했습니다. 원본은 CC0 1.0입니다.
+- 빙글빙글 고양이. DevinToaster의 [Catcube.gif](https://commons.wikimedia.org/wiki/File:Catcube.gif)에 배경과 여백을 추가해 4:1로 맞췄습니다. 원본과 배너 모두 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)입니다.

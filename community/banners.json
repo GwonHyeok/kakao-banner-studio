@@ -4,5 +4,11 @@
     "title": "뒤뚱뒤뚱 오리",
     "author": "Drummyfish",
     "image": "images/waddling-duck.gif"
+  },
+  {
+    "id": "cat-cube",
+    "title": "빙글빙글 고양이",
+    "author": "DevinToaster",
+    "image": "images/cat-cube.gif"
   }
 ]
