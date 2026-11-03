@@ -37,7 +37,6 @@ struct CommunityBanner: Decodable, Identifiable, Hashable {
 
     static func load() async throws -> [Self] {
         let file = try directory().appendingPathComponent("banners.json")
-        if isFresh(file), let cached = cachedList() { return cached }
         let data = try await fetch(base.appendingPathComponent("banners.json"), limit: 256 * 1024)
         let banners = try decodeList(data)
         try data.write(to: file, options: .atomic)

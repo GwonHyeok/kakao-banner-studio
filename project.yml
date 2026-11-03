@@ -15,7 +15,10 @@ targets:
         excludes: [Info.plist]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: local.kakaobanner.native
+        PRODUCT_BUNDLE_IDENTIFIER: com.koreaaitel.kakaobannerstudio
+        MARKETING_VERSION: "0.0.2"
+        PRODUCT_NAME: "카카오톡 배너 스튜디오"
+        EXECUTABLE_NAME: KakaoBanner
         INFOPLIST_FILE: App/Info.plist
         GENERATE_INFOPLIST_FILE: YES
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -35,7 +38,7 @@ targets:
     sources: [Proxy]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: local.kakaobanner.native.proxy
+        PRODUCT_BUNDLE_IDENTIFIER: com.koreaaitel.kakaobannerstudio.proxy
         PRODUCT_NAME: "$(PRODUCT_BUNDLE_IDENTIFIER)"
         INFOPLIST_FILE: Proxy/Info.plist
         CODE_SIGN_ENTITLEMENTS: Proxy/Proxy.entitlements

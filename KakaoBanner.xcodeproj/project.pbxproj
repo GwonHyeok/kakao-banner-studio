@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C12988A17FD64B36A8299003 /* BannerPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12988A17FD64B36A8299004 /* BannerPayload.swift */; };
-		C12988A17FD64B36A8299001 /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12988A17FD64B36A8299002 /* BannerResponse.swift */; };
 		11BCDF38CBB6513BA434D8D8 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B5B97729FA731BD6374515 /* BannerView.swift */; };
 		1D5C194D9D3E45223379C582 /* ProxyAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE540477E1D717EC2871E55C /* ProxyAccess.swift */; };
 		2201449E6180299B30B3A482 /* GeneratedBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFD7AF91C6F149B46D8CE1 /* GeneratedBanner.swift */; };
@@ -21,8 +19,10 @@
 		90C0F61BA9333D067884ADAE /* LocalCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3A6FD63292DE76F09E9BF /* LocalCA.swift */; };
 		AA7ACA08E973A9A265D685F1 /* KakaoPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1912027A248775021C325EA /* KakaoPreview.swift */; };
 		BC4597DC31AA06B2B0E09CED /* BannerPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1279502181B5086EDE870A45 /* BannerPreset.swift */; };
+		C12988A17FD64B36A8299001 /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12988A17FD64B36A8299002 /* BannerResponse.swift */; };
+		C12988A17FD64B36A8299003 /* BannerPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12988A17FD64B36A8299004 /* BannerPayload.swift */; };
 		C37248BD1A829DC72F71146C /* LocalBannerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF52C4C5295ED38A5607B483 /* LocalBannerStorage.swift */; };
-		E4D109EDAC36CE0E2A931CC0 /* local.kakaobanner.native.proxy.systemextension in Embed Dependencies */ = {isa = PBXBuildFile; fileRef = 94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4D109EDAC36CE0E2A931CC0 /* com.koreaaitel.kakaobannerstudio.proxy.systemextension in Embed Dependencies */ = {isa = PBXBuildFile; fileRef = 94750417000C0E7F0CFFD01E /* com.koreaaitel.kakaobannerstudio.proxy.systemextension */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 			dstPath = Contents/Library/SystemExtensions;
 			dstSubfolderSpec = 1;
 			files = (
-				E4D109EDAC36CE0E2A931CC0 /* local.kakaobanner.native.proxy.systemextension in Embed Dependencies */,
+				E4D109EDAC36CE0E2A931CC0 /* com.koreaaitel.kakaobannerstudio.proxy.systemextension in Embed Dependencies */,
 			);
 			name = "Embed Dependencies";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,8 +50,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C12988A17FD64B36A8299004 /* BannerPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPayload.swift; sourceTree = "<group>"; };
-		C12988A17FD64B36A8299002 /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
 		1279502181B5086EDE870A45 /* BannerPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPreset.swift; sourceTree = "<group>"; };
 		4BBA2ADB9CCA5F832249CC1A /* BannerCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCropView.swift; sourceTree = "<group>"; };
 		5CB3A6FD63292DE76F09E9BF /* LocalCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCA.swift; sourceTree = "<group>"; };
@@ -59,12 +57,14 @@
 		6E5CD12EBA92F40A0ADE9387 /* Proxy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Proxy.entitlements; sourceTree = "<group>"; };
 		7A85146DF933103448D20994 /* KakaoTalkLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTalkLauncher.swift; sourceTree = "<group>"; };
 		9445FFFDE951CF002FEE63C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = local.kakaobanner.native.proxy.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		94750417000C0E7F0CFFD01E /* com.koreaaitel.kakaobannerstudio.proxy.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.koreaaitel.kakaobannerstudio.proxy.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DA724E33E3C2BC56F3880E /* BannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerApp.swift; sourceTree = "<group>"; };
 		BBBFD7AF91C6F149B46D8CE1 /* GeneratedBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedBanner.swift; sourceTree = "<group>"; };
+		C12988A17FD64B36A8299002 /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
+		C12988A17FD64B36A8299004 /* BannerPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPayload.swift; sourceTree = "<group>"; };
 		CF39BC410D9A6DA4F0BC0974 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		D1912027A248775021C325EA /* KakaoPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoPreview.swift; sourceTree = "<group>"; };
-		DE7DD446FFA5A5754B14F037 /* KakaoBanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KakaoBanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7DD446FFA5A5754B14F037 /* 카카오톡 배너 스튜디오.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "카카오톡 배너 스튜디오.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8B43A2AF7248FEBC6D3D4B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DF52C4C5295ED38A5607B483 /* LocalBannerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBannerStorage.swift; sourceTree = "<group>"; };
 		E1AB9C2F5A3D4799964897A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		7D7732E0842CDD18AC103FC0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */,
-				DE7DD446FFA5A5754B14F037 /* KakaoBanner.app */,
+				94750417000C0E7F0CFFD01E /* com.koreaaitel.kakaobannerstudio.proxy.systemextension */,
+				DE7DD446FFA5A5754B14F037 /* 카카오톡 배너 스튜디오.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 			packageProductDependencies = (
 			);
 			productName = KakaoBanner;
-			productReference = DE7DD446FFA5A5754B14F037 /* KakaoBanner.app */;
+			productReference = DE7DD446FFA5A5754B14F037 /* 카카오톡 배너 스튜디오.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B5276A590096C83D92A5756C /* BannerProxy */ = {
@@ -191,8 +191,8 @@
 			name = BannerProxy;
 			packageProductDependencies = (
 			);
-			productName = local.kakaobanner.native.proxy;
-			productReference = 94750417000C0E7F0CFFD01E /* local.kakaobanner.native.proxy.systemextension */;
+			productName = com.koreaaitel.kakaobannerstudio.proxy;
+			productReference = 94750417000C0E7F0CFFD01E /* com.koreaaitel.kakaobannerstudio.proxy.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
@@ -313,6 +313,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_NAME = KakaoBanner;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -324,7 +325,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 27.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "카카오톡 배너 스튜디오";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -340,6 +341,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCX5YPKKCH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "카카오톡 배너 스튜디오";
@@ -348,7 +350,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native;
+				MARKETING_VERSION = 0.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koreaaitel.kakaobannerstudio;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
@@ -392,6 +395,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXECUTABLE_NAME = KakaoBanner;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -410,7 +414,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "카카오톡 배너 스튜디오";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -425,12 +429,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCX5YPKKCH;
 				INFOPLIST_FILE = Proxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native.proxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koreaaitel.kakaobannerstudio.proxy;
 				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
@@ -445,6 +450,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCX5YPKKCH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "카카오톡 배너 스튜디오";
@@ -453,7 +459,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native;
+				MARKETING_VERSION = 0.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koreaaitel.kakaobannerstudio;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
@@ -466,12 +473,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VCX5YPKKCH;
 				INFOPLIST_FILE = Proxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = local.kakaobanner.native.proxy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.koreaaitel.kakaobannerstudio.proxy;
 				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;

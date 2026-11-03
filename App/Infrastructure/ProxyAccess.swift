@@ -5,11 +5,12 @@ import NetworkExtension
 import Security
 
 final class ProxyAccess: NSObject, ObservableObject, OSSystemExtensionRequestDelegate {
-    private let identifier = "local.kakaobanner.native.proxy"
+    private let identifier = "com.koreaaitel.kakaobannerstudio.proxy"
     @Published var status = "네트워크 권한 설정을 시작할 수 있습니다."
     @Published var busy = false
 
     @Published private(set) var isConfigured: Bool?
+    @Published private(set) var isChecking = false
     private var inspection: OSSystemExtensionRequest?
 
     var hasInstallationEntitlements: Bool {
@@ -65,6 +66,7 @@ final class ProxyAccess: NSObject, ObservableObject, OSSystemExtensionRequestDel
             return
         }
         let request = OSSystemExtensionRequest.propertiesRequest(forExtensionWithIdentifier: identifier, queue: .main)
+        isChecking = true
         inspection = request
         request.delegate = self
         OSSystemExtensionManager.shared.submitRequest(request)
@@ -84,11 +86,15 @@ final class ProxyAccess: NSObject, ObservableObject, OSSystemExtensionRequestDel
         Task { @MainActor in
             if needsUpdate {
                 inspection = nil
+                isChecking = false
                 isConfigured = nil
                 requestActivation()
                 return
             }
-            defer { inspection = nil }
+            defer {
+                inspection = nil
+                isChecking = false
+            }
             guard enabled else {
                 isConfigured = false
                 return
@@ -109,6 +115,7 @@ final class ProxyAccess: NSObject, ObservableObject, OSSystemExtensionRequestDel
     func requestActivation() {
         guard hasInstallationEntitlements, !busy, inspection == nil else { return }
         busy = true
+        status = "네트워크 확장과 프록시 설정을 등록하는 중입니다."
         let request = OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: identifier, queue: .main)
         request.delegate = self
         OSSystemExtensionManager.shared.submitRequest(request)
@@ -121,6 +128,7 @@ final class ProxyAccess: NSObject, ObservableObject, OSSystemExtensionRequestDel
     func request(_ request: OSSystemExtensionRequest, didFailWithError error: Error) {
         if request === inspection {
             inspection = nil
+            isChecking = false
             isConfigured = false
             status = error.localizedDescription
             return

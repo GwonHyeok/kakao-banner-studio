@@ -4,11 +4,11 @@ import Security
 import os
 
 final class BannerProxyProvider: NETransparentProxyProvider {
-    private let queue = DispatchQueue(label: "local.kakaobanner.proxy")
+    private let queue = DispatchQueue(label: "com.koreaaitel.kakaobannerstudio.proxy")
     private let host = "t1.kakaocdn.net"
     private let adHost = "serv.ds.kakao.com"
     private let kakao = "com.kakao.KakaoTalkMac"
-    private let logger = Logger(subsystem: "local.kakaobanner.native.proxy", category: "banner")
+    private let logger = Logger(subsystem: "com.koreaaitel.kakaobannerstudio.proxy", category: "banner")
     private var listener: NWListener?
     private var port: Network.NWEndpoint.Port?
     private var bridges: [UUID: () -> Void] = [:]
@@ -308,7 +308,7 @@ final class BannerProxyProvider: NETransparentProxyProvider {
               let root = try? JSONSerialization.jsonObject(with: body) else { return body }
         let background = seamless
             ? "linear-gradient(to right, #f2f2f2 0 19.25%, #e8e8e8 19.25% 19.5%, #fff 19.5% 100%)"
-            : "#f3f3f3"
+            : "transparent"
         var changed = false
         func visit(_ node: Any) -> Any {
             if let array = node as? [Any] { return array.map(visit) }
