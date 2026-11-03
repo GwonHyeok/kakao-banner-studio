@@ -4,11 +4,11 @@ import Security
 import os
 
 final class BannerProxyProvider: NETransparentProxyProvider {
-    private let queue = DispatchQueue(label: "local.kakaobanner.proxy")
+    private let queue = DispatchQueue(label: "com.koreaaitel.kakaobannerstudio.proxy")
     private let host = "t1.kakaocdn.net"
     private let adHost = "serv.ds.kakao.com"
     private let kakao = "com.kakao.KakaoTalkMac"
-    private let logger = Logger(subsystem: "local.kakaobanner.native.proxy", category: "banner")
+    private let logger = Logger(subsystem: "com.koreaaitel.kakaobannerstudio.proxy", category: "banner")
     private var listener: NWListener?
     private var port: Network.NWEndpoint.Port?
     private var bridges: [UUID: () -> Void] = [:]

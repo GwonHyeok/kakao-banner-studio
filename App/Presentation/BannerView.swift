@@ -4,6 +4,7 @@ import ImagePlayground
 import UniformTypeIdentifiers
 
 struct BannerView: View {
+    private let previewPadding: CGFloat = 24
     let bannerLibrary: BannerLibrary
     @StateObject private var access = ProxyAccess()
     @AppStorage("customBannerName") private var customBannerName = ""
@@ -50,6 +51,7 @@ struct BannerView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var certificateStatus = ""
     @State private var certificateBusy = false
+    @State private var confirmsCertificateDeletion = false
 
     private enum Destination: Hashable {
         case gallery, presets, uploads, community, network
@@ -97,32 +99,18 @@ struct BannerView: View {
             .navigationSplitViewColumnWidth(min: 170, ideal: 208, max: 260)
         } detail: {
             if destination == .network {
-                ScrollView {
-                    Form {
-                        Section("네트워크 및 인증서") {
-                            Button("설치 가이드 열기") {
-                                refreshSetup()
-                                showsSetup = true
-                            }
-                            Button("CA 신뢰 제거") { manageCertificate(install: false) }
-                                .disabled(certificateBusy)
-                            if !certificateStatus.isEmpty {
-                                Text(certificateStatus).font(.caption).foregroundStyle(.secondary)
-                            }
-                        }
-                    }
-                    .formStyle(.grouped)
-                }
-                .frame(minWidth: 828, maxWidth: .infinity, maxHeight: .infinity)
+                networkSettings
             } else {
                 gallery
             }
         }
+        .frame(minHeight: KakaoPreview.windowHeight + 2 * previewPadding)
         .onOpenURL { url in
             guard url.absoluteString == "kakaobanner://gallery" else { return }
             destination = .gallery
         }
         .onAppear {
+            if preset == .seamless { preset = .blank }
             refreshSetup()
             if !imagePath.isEmpty, !customBannerName.isEmpty {
                 var updated = names
@@ -226,17 +214,17 @@ struct BannerView: View {
         }
     }
 
-    private func bannerSection(_ heading: String, items: [GalleryItem], showEmptyHint: Bool = true) -> some View {
+    private func bannerSection(_ heading: String, items: [GalleryItem], isUploads: Bool = false) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(heading)
                 .font(.title2.bold())
                 .accessibilityAddTraits(.isHeader)
 
-            if items.isEmpty && showEmptyHint {
-                Label("상단 툴바에서 이미지를 추가하거나 생성하세요.", systemImage: "photo.on.rectangle")
+            if items.isEmpty && isUploads {
+                Text("아직 내 배너가 없어요.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-            } else {
+            } else if !items.isEmpty {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 280, maximum: 420), spacing: 24, alignment: .top)], alignment: .leading, spacing: 24) {
                     ForEach(items, id: \.self) { item in
                         let option = item.preset
@@ -318,14 +306,16 @@ struct BannerView: View {
         VStack(alignment: .leading, spacing: 12) {
             bannerSection("커뮤니티", items: (communityBanners ?? []).map {
                 GalleryItem(preset: .custom, community: $0)
-            }, showEmptyHint: false)
+            })
             if let communityError {
                 Text(communityError).foregroundStyle(.secondary)
                 Button("다시 불러오기") { Task { await loadCommunity() } }
             } else if communityBanners == nil {
                 ProgressView("배너 불러오는 중")
             } else if communityBanners?.isEmpty == true {
-                Text("등록된 배너가 없습니다.").foregroundStyle(.secondary)
+                Text("아직 커뮤니티 배너가 없어요.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -370,12 +360,12 @@ struct BannerView: View {
                 case .presets:
                     bannerSection("기본 프리셋", items: builtInItems)
                 case .uploads:
-                    bannerSection("내 배너", items: uploadedItems)
+                    bannerSection("내 배너", items: uploadedItems, isUploads: true)
                 case .community:
                     communitySection
                 default:
                     bannerSection("기본 프리셋", items: builtInItems)
-                    bannerSection("내 배너", items: uploadedItems)
+                    bannerSection("내 배너", items: uploadedItems, isUploads: true)
                     communitySection
                 }
             }
@@ -431,7 +421,7 @@ struct BannerView: View {
         .inspector(isPresented: $showsPreview) {
             ScrollView {
                 KakaoPreview(preset: preset, imagePath: imagePath, restart: isPreviewOnly ? nil : restartKakaoTalk, isRestarting: isRestarting)
-                    .padding(24)
+                    .padding(previewPadding)
                     .frame(maxWidth: .infinity)
             }
             .toolbar {
@@ -493,6 +483,83 @@ struct BannerView: View {
         guard !isPreviewOnly else { return }
         if !certificateBusy { hasCertificateTrust = LocalCA.hasBannerTrust() }
         access.refreshConfiguration()
+    }
+
+    private var networkSettings: some View {
+        let busy = access.busy || access.isChecking || certificateBusy
+        let ready = access.isConfigured == true && hasCertificateTrust
+        return Form {
+            Section {
+                VStack(spacing: 8) {
+                    Image(systemName: "lock.shield")
+                        .font(.system(size: 56, weight: .light))
+                        .foregroundStyle(.tint)
+                        .accessibilityHidden(true)
+                    Text("네트워크 및 인증서")
+                        .font(.largeTitle.bold())
+                        .accessibilityAddTraits(.isHeader)
+                    Text(busy ? "설정 상태 확인 및 변경 중" :
+                        ready ? "배너를 적용할 준비가 되었습니다." : "배너 적용에 필요한 권한을 설정하세요.")
+                        .foregroundStyle(.secondary)
+                }
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 28)
+                .listRowBackground(Color.clear)
+            }
+
+            Section("네트워크 확장") {
+                LabeledContent("상태", value: access.isChecking ? "확인 중" : access.busy ? "설정 중" :
+                    access.isConfigured == true ? "설정 완료" : "설정 필요")
+                if access.isConfigured != true || access.busy {
+                    Text(access.status)
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+                }
+                LabeledContent("확장 등록") {
+                    Button(access.isConfigured == true ? "확장 재설정" : "확장 설정") {
+                        access.requestActivation()
+                    }
+                    .disabled(busy || !access.hasInstallationEntitlements)
+                }
+            }
+
+            Section("로컬 인증서") {
+                LabeledContent("상태", value: certificateBusy ? "변경 중" :
+                    hasCertificateTrust ? "신뢰됨" : "설정 필요")
+                if !certificateStatus.isEmpty {
+                    Text(certificateStatus)
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+                }
+                LabeledContent("인증서 신뢰") {
+                    Button(hasCertificateTrust ? "신뢰 재설정" : "인증서 설정") {
+                        manageCertificate(install: true)
+                    }
+                    .disabled(busy)
+                }
+            }
+
+            Section("설정 관리") {
+                LabeledContent("네트워크 및 인증서 상태") {
+                    Button("다시 확인", action: refreshSetup)
+                        .disabled(busy)
+                }
+                LabeledContent("키체인의 로컬 인증서") {
+                    Button("삭제…", role: .destructive) { confirmsCertificateDeletion = true }
+                        .disabled(busy || !hasCertificateTrust)
+                }
+            }
+        }
+        .formStyle(.grouped)
+        .navigationTitle("네트워크 및 인증서")
+        .task { refreshSetup() }
+        .alert("로컬 인증서를 삭제할까요?", isPresented: $confirmsCertificateDeletion) {
+            Button("취소", role: .cancel) {}
+            Button("삭제", role: .destructive) { manageCertificate(install: false) }
+        } message: {
+            Text("키체인에서 배너용 인증서와 신뢰 설정을 삭제합니다. 배너를 다시 적용하려면 인증서를 설정해야 합니다.")
+        }
     }
 
     private var setupGuide: some View {
@@ -586,6 +653,7 @@ struct BannerView: View {
     }
 
     private func manageCertificate(install: Bool) {
+        guard !certificateBusy else { return }
         certificateBusy = true
         DispatchQueue.global(qos: .userInitiated).async {
             let message: String

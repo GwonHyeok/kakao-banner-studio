@@ -1,5 +1,15 @@
 xcuserdata/
 DerivedData/
 .DS_Store
+
+# Keep signing and notarization inputs outside the source tree.
+*.provisionprofile
+*.mobileprovision
 *.p12
+*.pfx
+*.p8
 *.key
+*.pem
+.env
+.env.*
+*.dmg

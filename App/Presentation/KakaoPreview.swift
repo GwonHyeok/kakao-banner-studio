@@ -19,6 +19,7 @@ extension BannerPreset {
 }
 
 struct KakaoPreview: View {
+    static let windowHeight: CGFloat = 640
     static let windowCornerRadius: CGFloat = 17
     static let bannerWidth: CGFloat = 400
     static let bannerHeight: CGFloat = 100
@@ -93,7 +94,7 @@ struct KakaoPreview: View {
                 .frame(width: Self.bannerWidth, height: Self.bannerHeight)
                 .clipped()
         }
-        .frame(width: 400, height: 640)
+        .frame(width: 400, height: Self.windowHeight)
         .background(colorScheme == .light ? Color.white : Color(nsColor: .windowBackgroundColor))
         .clipShape(.rect(cornerRadius: Self.windowCornerRadius))
         .overlay { RoundedRectangle(cornerRadius: Self.windowCornerRadius).strokeBorder(.quaternary) }
