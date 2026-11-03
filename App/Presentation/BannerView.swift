@@ -17,6 +17,7 @@ struct BannerView: View {
     private struct GalleryItem: Hashable {
         let preset: BannerPreset
         var file: URL? = nil
+        var community: CommunityBanner? = nil
     }
 
     private var names: [String: String] {
@@ -24,6 +25,7 @@ struct BannerView: View {
     }
 
     private func title(for item: GalleryItem) -> String {
+        if let community = item.community { return community.title }
         guard let file = item.file else { return item.preset.title }
         let stem = file.deletingPathExtension().lastPathComponent
         if let name = names[file.lastPathComponent] { return name }
@@ -55,7 +57,8 @@ struct BannerView: View {
 
     @State private var communityBanners: [CommunityBanner]?
     @State private var communityError: String?
-    @State private var downloadingBanner = false
+    @State private var communityFiles: [CommunityBanner: URL] = [:]
+    @State private var failedCommunityImages: Set<CommunityBanner> = []
 
     @State private var destination: Destination? = .gallery
 
@@ -81,8 +84,8 @@ struct BannerView: View {
                 Section("보관함") {
                     Label("전체 배너", systemImage: "square.grid.2x2").tag(Destination.gallery)
                     Label("기본 프리셋", systemImage: "sparkles").tag(Destination.presets)
-                    Label("커뮤니티", systemImage: "person.2").tag(Destination.community)
                     Label("내 업로드", systemImage: "photo.on.rectangle").tag(Destination.uploads)
+                    Label("커뮤니티", systemImage: "person.2").tag(Destination.community)
                 }
                 if !isPreviewOnly {
                     Section("설정") {
@@ -223,13 +226,13 @@ struct BannerView: View {
         }
     }
 
-    private func bannerSection(_ heading: String, items: [GalleryItem]) -> some View {
+    private func bannerSection(_ heading: String, items: [GalleryItem], showEmptyHint: Bool = true) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(heading)
                 .font(.title2.bold())
                 .accessibilityAddTraits(.isHeader)
 
-            if items.isEmpty {
+            if items.isEmpty && showEmptyHint {
                 Label("상단 툴바에서 이미지를 추가하거나 생성하세요.", systemImage: "photo.on.rectangle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -237,17 +240,31 @@ struct BannerView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 280, maximum: 420), spacing: 24, alignment: .top)], alignment: .leading, spacing: 24) {
                     ForEach(items, id: \.self) { item in
                         let option = item.preset
-                        let selected = preset == option && (item.file == nil || item.file?.path == imagePath)
+                        let file = item.community.flatMap { communityFiles[$0] } ?? item.file
+                        let selected = preset == option && (option != .custom || file?.path == imagePath)
                         Button {
                             preset = option
-                            if let file = item.file { imagePath = file.path }
+                            if let file { imagePath = file.path }
                         } label: {
                             VStack(alignment: .leading, spacing: 9) {
                                 Color.clear
                                     .aspectRatio(KakaoPreview.bannerAspectRatio, contentMode: .fit)
                                     .overlay {
                                         GeometryReader { geometry in
-                                            BannerArtwork(preset: option, imagePath: item.file?.path ?? "", showsTransparencyGrid: true)
+                                            Group {
+                                                if let community = item.community, file == nil {
+                                                    Rectangle().fill(.quaternary)
+                                                        .overlay {
+                                                            if failedCommunityImages.contains(community) {
+                                                                Image(systemName: "photo.badge.exclamationmark")
+                                                            } else {
+                                                                ProgressView().controlSize(.small)
+                                                            }
+                                                        }
+                                                } else {
+                                                    BannerArtwork(preset: option, imagePath: file?.path ?? "", showsTransparencyGrid: true)
+                                                }
+                                            }
                                                 .frame(width: geometry.size.width, height: geometry.size.height)
                                         }
                                     }
@@ -255,9 +272,13 @@ struct BannerView: View {
                                                      bottomTrailingRadius: KakaoPreview.windowCornerRadius))
                                     .accessibilityHidden(true)
                                 HStack {
-                                    Text(title(for: item))
-                                        .font(.subheadline.weight(.semibold))
-                                        .lineLimit(1)
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(title(for: item)).font(.subheadline.weight(.semibold))
+                                        if let community = item.community {
+                                            Text(community.author).font(.caption).foregroundStyle(.secondary)
+                                        }
+                                    }
+                                    .lineLimit(1)
                                     Spacer()
                                     if selected {
                                         Image(systemName: "checkmark.circle.fill")
@@ -269,6 +290,10 @@ struct BannerView: View {
                             .contentShape(.rect)
                         }
                         .buttonStyle(.plain)
+                        .disabled(item.community != nil && file == nil)
+                        .task(id: item.community) {
+                            if let community = item.community { await loadCommunityImage(community) }
+                        }
                         .contextMenu {
                             if let file = item.file {
                                 Button("이름 변경…") {
@@ -290,57 +315,42 @@ struct BannerView: View {
     }
 
     private var communitySection: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("커뮤니티").font(.title2.bold())
+        VStack(alignment: .leading, spacing: 12) {
+            bannerSection("커뮤니티", items: (communityBanners ?? []).map {
+                GalleryItem(preset: .custom, community: $0)
+            }, showEmptyHint: false)
             if let communityError {
                 Text(communityError).foregroundStyle(.secondary)
                 Button("다시 불러오기") { Task { await loadCommunity() } }
-            }
-            if let communityBanners {
-                if communityBanners.isEmpty {
-                    Text("등록된 배너가 없습니다.").foregroundStyle(.secondary)
-                }
-                ForEach(communityBanners) { item in
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(item.title).font(.headline)
-                            Text(item.author).foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                        Button("선택") { Task { await selectCommunityBanner(item) } }
-                            .disabled(downloadingBanner)
-                    }
-                }
-            } else if communityError == nil {
+            } else if communityBanners == nil {
                 ProgressView("배너 불러오는 중")
+            } else if communityBanners?.isEmpty == true {
+                Text("등록된 배너가 없습니다.").foregroundStyle(.secondary)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .task {
-            if communityBanners == nil { await loadCommunity() }
-        }
+        .task { await loadCommunity() }
     }
 
     private func loadCommunity() async {
         communityError = nil
+        if communityBanners == nil { communityBanners = CommunityBanner.cachedList() }
         do {
             communityBanners = try await CommunityBanner.load()
         } catch {
-            if !Task.isCancelled { communityError = "커뮤니티 목록을 불러오지 못했습니다." }
+            if !Task.isCancelled && communityBanners == nil {
+                communityError = "커뮤니티 목록을 불러오지 못했습니다."
+            }
         }
     }
 
-    private func selectCommunityBanner(_ item: CommunityBanner) async {
-        guard !downloadingBanner else { return }
-        downloadingBanner = true
-        defer { downloadingBanner = false }
-        communityError = nil
+    private func loadCommunityImage(_ item: CommunityBanner) async {
+        if let cached = item.cachedFile() { communityFiles[item] = cached }
+        failedCommunityImages.remove(item)
         do {
-            let url = try await item.download()
-            imagePath = url.path
-            preset = .custom
+            communityFiles[item] = try await item.download()
         } catch {
-            communityError = "배너를 불러오지 못했습니다."
+            if !Task.isCancelled && communityFiles[item] == nil { failedCommunityImages.insert(item) }
         }
     }
 
@@ -366,6 +376,7 @@ struct BannerView: View {
                 default:
                     bannerSection("기본 프리셋", items: builtInItems)
                     bannerSection("내 배너", items: uploadedItems)
+                    communitySection
                 }
             }
             .padding(24)
