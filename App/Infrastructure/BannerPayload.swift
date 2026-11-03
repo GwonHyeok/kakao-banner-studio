@@ -27,7 +27,7 @@ struct CommunityBanner: Decodable, Identifiable {
     let author: String
     let image: String
 
-    private static let base = URL(string: "https://raw.githubusercontent.com/GwonHyeok/kakao-banner-studio/main/community/")!
+    private static let base = URL(string: "https://raw.githubusercontent.com/GwonHyeok/kakao-banner-studio/refs/heads/main/community/")!
 
     static func load() async throws -> [Self] {
         let data = try await fetch(base.appendingPathComponent("banners.json"), limit: 256 * 1024)
